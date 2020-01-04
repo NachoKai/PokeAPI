@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>PokeAPI | Nacho Caiafa</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+
+  <div class="pokemon-list" id="lista-pokemon">
+    <div class="pokemon" id="pokemon">
+      <img class="poke-img" src="" id="poke-img">
+      <img class="poke-img" src="" id="poke-img-shiny">
+      <button id="shinyBtn" onclick="shinyBtnFn()">Shiny ON/OFF</button>
+      <p id="poke-name"></p><b>
+        <p id="poke-number"></p>
+      </b>
+      <span id="poke-type-a"></span>
+      <span id="poke-type-b"></span>
+      <p id="poke-weight"></p>
+      <p id="poke-height"></p>
+      <p id="poke-generation"></p>
+      <p id="poke-description"></p>
+    </div>
+  </div>
+
+  <button onclick="consultarPokemones()" id="poke-boton">Start!</button>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
