@@ -78,6 +78,14 @@
   cursor: pointer;
 }
 
+#leftBtn:hover {
+  cursor: pointer;
+}
+
+#rightBtn:hover {
+  cursor: pointer;
+}
+
 .hidden {
   display: none;
 }

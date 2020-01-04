@@ -1,9 +1,13 @@
 let listaPokemon = document.getElementById("lista-pokemon"),
     item = listaPokemon.querySelector(`#pokemon`),
-    imagen = item.querySelector(`#poke-img`),
-    imagenShiny = item.querySelector(`#poke-img-shiny`),
-    imagenBack = item.querySelector(`#poke-imgBack`),
-    imagenShinyBack = item.querySelector(`#poke-img-shinyBack`),
+    img = item.querySelector(`#poke-img`),
+    imgBack = item.querySelector(`#poke-img-back`),
+    imgShiny = item.querySelector(`#poke-img-shiny`),
+    imgShinyBack = item.querySelector(`#poke-img-shiny-back`),
+    imgFem = item.querySelector(`#poke-img-fem`),
+    imgFemBack = item.querySelector(`#poke-img-fem-back`),
+    imgShinyFem = item.querySelector(`#poke-img-shiny-fem`),
+    imgShinyFemBack = item.querySelector(`#poke-img-shiny-fem-back`),
     nombre = item.querySelector(`#poke-name`),
     numero = item.querySelector(`#poke-number`),
     peso = item.querySelector(`#poke-weight`),
@@ -11,8 +15,9 @@ let listaPokemon = document.getElementById("lista-pokemon"),
     tipoA = item.querySelector(`#poke-type-a`),
     tipoB = item.querySelector(`#poke-type-b`),
     shinyBtn = item.querySelector(`#shinyBtn`),
-    left = item.querySelector(`#leftBtn`),
-    right = item.querySelector(`#rightBtn`)
+    leftBtn = item.querySelector(`#leftBtn`),
+    rightBtn = item.querySelector(`#rightBtn`),
+    sexBtn = item.querySelector(`#sexBtn`)
 
 function consultarPokemon(id) {
     fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
@@ -25,33 +30,39 @@ function consultarPokemon(id) {
 }
 
 function consultarPokemones() {
-    let primerId = Math.round(Math.random() * 351)
+    let primerId = Math.round(Math.random() * 493)
     consultarPokemon(primerId, 1)
 }
 
 function crearPokemon(pokemon) {
-    imagen.src = pokemon.sprites.front_default
-    imagen.className = 'poke-img'
+    img.src = pokemon.sprites.front_default
+    img.className = 'poke-img'
 
-    imagenShiny.src = pokemon.sprites.front_shiny
-    imagenShiny.className = 'hidden'
+    imgShiny.src = pokemon.sprites.front_shiny
+    imgShiny.className = 'hidden'
 
-    imagenShinyBack.src = pokemon.sprites.back_shiny
-    imagenShinyBack.className = 'hidden'
+    imgShinyBack.src = pokemon.sprites.back_shiny
+    imgShinyBack.className = 'hidden'
 
-    imagenBack.src = pokemon.sprites.back_default
-    imagenBack.className = 'hidden'
+    imgBack.src = pokemon.sprites.back_default
+    imgBack.className = 'hidden'
+
+    imgFem.src = pokemon.sprites.front_female
+    imgFem.className = 'hidden'
+
+    imgFemBack.src = pokemon.sprites.back_female
+    imgFemBack.className = 'hidden'
+
+    imgShinyFem.src = pokemon.sprites.front_shiny_female
+    imgShinyFem.className = 'hidden'
+
+    imgShinyFemBack.src = pokemon.sprites.back_shiny_female
+    imgShinyFemBack.className = 'hidden'
 
     nombre.textContent = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)
     numero.textContent = `#${pokemon.id}`
     peso.textContent = `Weight: ${Math.round((pokemon.weight)/10)} kg.`
     altura.textContent = `Height: ${Math.round((pokemon.height)*10)} cm.`
-
-    // let generation = item.querySelector(`#poke-generation`)
-    // generation.textContent = `Generation: ${pokemon.generation.name} `
-    // let descripcion = item.querySelector(`#poke-description`)
-    // descripcion.textContent = `Description: `
-
     tipoA.textContent = `Type A: ${pokemon.types[0].type.name.charAt(0).toUpperCase() + pokemon.types[0].type.name.slice(1)}`
     if (pokemon.types[1] === undefined) {
         return tipoB.textContent = ''
@@ -61,47 +72,118 @@ function crearPokemon(pokemon) {
 }
 
 function shinyBtnFn() {
-    if (imagen.className === 'poke-img') {
+    if (img.className === 'poke-img') {
         muestraShiny()
-    }else{
+    } else {
         muestraDefault()
     }
 }
 
 function turnFn() {
-    if (imagen.className === 'poke-img') {
+    if (img.className === 'poke-img') {
         muestraDefaultBack()
-    }else{
+    } else {
+        muestraDefault()
+    }
+}
+
+function sexFn() {
+    if (imgFem.src === 'https://nachokai.github.io/PokeAPI/null') {
+        muestraDefault()
+    }
+    if (img.className === 'poke-img') {
+        muestraDefaultFem()
+    } else {
         muestraDefault()
     }
 }
 
 function muestraDefault() {
-    imagen.className = 'poke-img'
-    imagenBack.className = 'hidden'
-    imagenShiny.className = 'hidden'
-    imagenShinyBack.className = 'hidden'
+    img.className = 'poke-img'
+    imgBack.className = 'hidden'
+    imgShiny.className = 'hidden'
+    imgShinyBack.className = 'hidden'
+    imgFem.className = 'hidden'
+    imgFemBack.className = 'hidden'
+    imgShinyFem.className = 'hidden'
+    imgShinyFemBack.className = 'hidden'
 }
 
 function muestraShiny() {
-    imagen.className = 'hidden'
-    imagenBack.className = 'hidden'
-    imagenShiny.className = 'poke-img'
-    imagenShinyBack.className = 'hidden'
+    img.className = 'hidden'
+    imgBack.className = 'hidden'
+    imgShiny.className = 'poke-img'
+    imgShinyBack.className = 'hidden'
+    imgFem.className = 'hidden'
+    imgFemBack.className = 'hidden'
+    imgShinyFem.className = 'hidden'
+    imgShinyFemBack.className = 'hidden'
 }
 
 function muestraDefaultBack() {
-    imagen.className = 'hidden'
-    imagenBack.className = 'poke-img'
-    imagenShiny.className = 'hidden'
-    imagenShinyBack.className = 'hidden'
+    img.className = 'hidden'
+    imgBack.className = 'poke-img'
+    imgShiny.className = 'hidden'
+    imgShinyBack.className = 'hidden'
+    imgFem.className = 'hidden'
+    imgFemBack.className = 'hidden'
+    imgShinyFem.className = 'hidden'
+    imgShinyFemBack.className = 'hidden'
 }
 
 function muestraShinyBack() {
-    imagen.className = 'hidden'
-    imagenBack.className = 'hidden'
-    imagenShiny.className = 'hidden'
-    imagenShinyBack.className = 'poke-img'
+    img.className = 'hidden'
+    imgBack.className = 'hidden'
+    imgShiny.className = 'hidden'
+    imgShinyBack.className = 'poke-img'
+    imgFem.className = 'hidden'
+    imgFemBack.className = 'hidden'
+    imgShinyFem.className = 'hidden'
+    imgShinyFemBack.className = 'hidden'
+}
+
+function muestraDefaultFem() {
+    img.className = 'hidden'
+    imgBack.className = 'hidden'
+    imgShiny.className = 'hidden'
+    imgShinyBack.className = 'hidden'
+    imgFem.className = 'poke-img'
+    imgFemBack.className = 'hidden'
+    imgShinyFem.className = 'hidden'
+    imgShinyFemBack.className = 'hidden'
+}
+
+function muestraDefaultBackFem() {
+    img.className = 'hidden'
+    imgBack.className = 'hidden'
+    imgShiny.className = 'hidden'
+    imgShinyBack.className = 'hidden'
+    imgFem.className = 'hidden'
+    imgFemBack.className = 'poke-img'
+    imgShinyFem.className = 'hidden'
+    imgShinyFemBack.className = 'hidden'
+}
+
+function muestraShinyFem() {
+    img.className = 'hidden'
+    imgBack.className = 'hidden'
+    imgShiny.className = 'hidden'
+    imgShinyBack.className = 'hidden'
+    imgFem.className = 'hidden'
+    imgFemBack.className = 'hidden'
+    imgShinyFem.className = 'poke-img'
+    imgShinyFemBack.className = 'hidden'
+}
+
+function muestraShinyBackFem() {
+    img.className = 'hidden'
+    imgBack.className = 'hidden'
+    imgShiny.className = 'hidden'
+    imgShinyBack.className = 'hidden'
+    imgFem.className = 'hidden'
+    imgFemBack.className = 'hidden'
+    imgShinyFem.className = 'hidden'
+    imgShinyFemBack.className = 'poke-img'
 }
 
 /*
