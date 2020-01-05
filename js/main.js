@@ -29,36 +29,39 @@ function consultarPokemon(id) {
         })
 }
 
+function consultarPokemonStats(id) {
+    fetch(`https://pokeapi.co/api/v2/stat/${id}`)
+        .then(function (response) {
+            response.json()
+                .then(function (pokemon) {
+                    crearPokemon(pokemon)
+                })
+        })
+}
+
 function consultarPokemones() {
-    let primerId = Math.round(Math.random() * 493)
-    consultarPokemon(primerId, 1)
+    let pokeID = Math.round(Math.random() * 493)
+    consultarPokemon(pokeID)
+    consultarPokemonStats(pokeID)
 }
 
 function crearPokemon(pokemon) {
     img.src = pokemon.sprites.front_default
     img.className = 'poke-img'
-
     imgShiny.src = pokemon.sprites.front_shiny
     imgShiny.className = 'hidden'
-
     imgShinyBack.src = pokemon.sprites.back_shiny
     imgShinyBack.className = 'hidden'
-
     imgBack.src = pokemon.sprites.back_default
     imgBack.className = 'hidden'
-
     imgFem.src = pokemon.sprites.front_female
     imgFem.className = 'hidden'
-
     imgFemBack.src = pokemon.sprites.back_female
     imgFemBack.className = 'hidden'
-
     imgShinyFem.src = pokemon.sprites.front_shiny_female
     imgShinyFem.className = 'hidden'
-
     imgShinyFemBack.src = pokemon.sprites.back_shiny_female
     imgShinyFemBack.className = 'hidden'
-
     nombre.textContent = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)
     numero.textContent = `#${pokemon.id}`
     peso.textContent = `Weight: ${Math.round((pokemon.weight)/10)} kg.`
