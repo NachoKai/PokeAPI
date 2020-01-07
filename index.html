@@ -10,6 +10,8 @@
 
 <body>
 
+  <p style="text-align: center;">Get Pokemons!</p>
+
   <div class="pokemon-list" id="lista-pokemon">
     <div class="pokemon" id="pokemon">
       <img class="poke-img" src="" id="poke-img">
@@ -38,9 +40,17 @@
     </div>
   </div>
 
-  <button onclick="consultarPokemones()" id="poke-boton">Start!</button>
+  <duv class="btns">
+    <button id="poke-btn" onclick="consultarPokemones()">Get Pokemon!</button> 
+    <button id="poke-btn-gif">Get GIF!</button>
+  </duv>
+  <br>
+  <p style="text-align: center;">Free GIFs!</p>
+  <br>
+  <div id="gifs"></div>
 
-  <script src="js/main.js"></script>
+  <script src="src/main.js"></script>
+  <script src="src/giphy.js"></script>
 </body>
 
 </html>

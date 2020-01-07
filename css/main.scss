@@ -67,7 +67,23 @@
   display: none;
 }
 
-.btn{
+.btn {
   display: flex;
   flex-direction: row;
+}
+
+.gif {
+  display: flex;
+  justify-content: center;
+
+  img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
 }
