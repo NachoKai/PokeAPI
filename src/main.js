@@ -23,7 +23,7 @@ let listaPokemon = document.getElementById("lista-pokemon"),
 function consultarPokemones() {
     let pokeID = Math.round(Math.random() * 493);
     consultarPokemon(pokeID);
-    consultarPokemonStats(pokeID);
+    // consultarPokemonStats(pokeID);
 }
 
 function consultarPokemon(id) {
@@ -36,15 +36,15 @@ function consultarPokemon(id) {
         })
 }
 
-function consultarPokemonStats(id) {
-    fetch(`https://pokeapi.co/api/v2/stat/${id}`)
-        .then(function (response) {
-            response.json()
-                .then(function (pokemon) {
-                    crearPokemon(pokemon)
-                })
-        })
-}
+// function consultarPokemonStats(id) {
+//     fetch(`https://pokeapi.co/api/v2/stat/${id}`)
+//         .then(function (response) {
+//             response.json()
+//                 .then(function (pokemon) {
+//                     crearPokemon(pokemon)
+//                 })
+//         })
+// }
 
 function crearPokemon(pokemon) {
     img.src = pokemon.sprites.front_default
@@ -92,11 +92,10 @@ function turnFn() {
 }
 
 function sexFn() {
-    if (imgFem.src === 'https://nachokai.github.io/PokeAPI/null') {
-        muestraDefault()
-    }
-    if (img.className === 'poke-img') {
+    if (img.className === 'poke-img' && imgFem.getAttribute('src') !== "") {
         muestraDefaultFem()
+    } else if (imgFem.getAttribute('src') === "") {
+        muestraDefault()
     } else {
         muestraDefault()
     }
