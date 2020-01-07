@@ -38,21 +38,21 @@ function consultarPokemon(id) {
         })
 }
 
-function showBtns(){
+function showBtns() {
     const btns = document.querySelector("#btn");
     const div = document.createElement("div");
     div.className = "btns"
     div.innerHTML = `
-    <button id="leftBtn" onclick="turnFn()">
-    << </button> <button id="shinyBtn" onclick="shinyBtnFn()">Shiny ON/OFF
+    <button class="btn btn--s" id="leftBtn" onclick="turnFn()">
+    << </button> <button class="btn btn--s" id="shinyBtn" onclick="shinyBtnFn()">Shiny ON/OFF
     </button>
-    <button id="sexBtn" onclick="sexFn()"> ♂/♀ </button>
-    <button id="rightBtn" onclick="turnFn()"> >> </button>
+    <button class="btn btn--s" id="sexBtn" onclick="sexFn()"> ♂/♀ </button>
+    <button class="btn btn--s" id="rightBtn" onclick="turnFn()"> >> </button>
     `
     btns.appendChild(div);
 }
 
-function deleteBtns(){
+function deleteBtns() {
     const $btns = document.querySelectorAll(".btns")
     for (let i = 0; i < $btns.length; i++) {
         $btns[i].remove()
