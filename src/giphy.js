@@ -2,9 +2,7 @@ let pokeBtnGif = document.getElementById("poke-btn-gif")
 
 pokeBtnGif.onclick = function () {
     let request = new XMLHttpRequest();
-
     request.open('GET', 'https://api.giphy.com/v1/gifs/random?api_key=DwIUav0spoC6ragXjOACCY6g8sNp8hxO&tag=pokemon&rating=g');
-
     request.onload = function () {
         let gifBox = document.getElementById("gifs")
         gifBox.style.borderStyle = "solid";
@@ -20,13 +18,7 @@ pokeBtnGif.onclick = function () {
         borrarGif()
         gifs.appendChild(div);
     }
-
-    request.oneerror = function () {
-        console.log("There seems to be a problem!");
-    }
-
     request.send();
-
 }
 
 function borrarGif() {
