@@ -27,8 +27,6 @@ function consultarPokemones() {
     showBtns()
 }
 
-
-
 function consultarPokemon(id) {
     fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(response => response.json()).then((pokemon) => crearPokemon(pokemon))
 }
