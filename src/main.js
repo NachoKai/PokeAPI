@@ -30,8 +30,7 @@ function consultarPokemones() {
 
 
 function consultarPokemon(id) {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
-        .then(response => response.json()).then((pokemon) => crearPokemon(pokemon))
+    fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(response => response.json()).then((pokemon) => crearPokemon(pokemon))
 }
 
 function showBtns() {
@@ -76,8 +75,8 @@ function crearPokemon(pokemon) {
     imgShinyFemBack.className = 'hidden'
     nombre.textContent = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)
     numero.textContent = `#${pokemon.id}`
-    peso.textContent = `Weight: ${Math.round((pokemon.weight)/10)} kg.`
-    altura.textContent = `Height: ${Math.round((pokemon.height)*10)} cm.`
+    peso.textContent = `Weight: ${Math.round((pokemon.weight) / 10)} kg.`
+    altura.textContent = `Height: ${Math.round((pokemon.height) * 10)} cm.`
     tipoA.textContent = `Type A: ${pokemon.types[0].type.name.charAt(0).toUpperCase() + pokemon.types[0].type.name.slice(1)}`
     if (pokemon.types[1] === undefined) {
         return tipoB.textContent = ''
