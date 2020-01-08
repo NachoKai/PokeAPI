@@ -25,7 +25,6 @@ function consultarPokemones() {
     consultarPokemon(pokeID);
     deleteBtns()
     showBtns()
-    // consultarPokemonStats(pokeID);
 }
 
 function consultarPokemon(id) {
@@ -59,16 +58,6 @@ function deleteBtns() {
     }
     event.preventDefault();
 }
-
-// function consultarPokemonStats(id) {
-//     fetch(`https://pokeapi.co/api/v2/stat/${id}`)
-//         .then(function (response) {
-//             response.json()
-//                 .then(function (pokemon) {
-//                     crearPokemon(pokemon)
-//                 })
-//         })
-// }
 
 function crearPokemon(pokemon) {
     img.src = pokemon.sprites.front_default
