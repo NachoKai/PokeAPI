@@ -60,6 +60,7 @@ function deleteBtns() {
 }
 
 function crearPokemon(pokemon) {
+    item.style.borderStyle = "solid"
     img.src = pokemon.sprites.front_default
     img.className = 'poke-img'
     imgShiny.src = pokemon.sprites.front_shiny
