@@ -23,21 +23,6 @@ let listaPokemon = document.getElementById("lista-pokemon"),
     resultado = document.getElementById("resultado"),
     calcular = document.getElementById("calcular-usuario")
 
-calcular.onclick = () => {
-    resultado.innerText = `Pesas ${pesoUser.value} y altura ${alturaUser.value}`
-
-
-}
-
-function calculaPeso() {
-    if (pesoUser.value === pesoPokemon.value) {
-        resultado.innerText = `Pesas ${pesoUser.value} igual que !`
-    } else if (pesoUser.value < pesoPokemon.value) {
-        resultado.innerText = `Pesas ${pesoUser.value} menos que !`
-    } else if (pesoUser.value > pesoPokemon.value) {
-        resultado.innerText = `Pesas ${pesoUser.value} mas que !`
-    }
-}
 
 function calculaAltura() {
     if (condition) {
@@ -233,3 +218,24 @@ V: 494-649
 VI: 650-721
 VII: 722-809
 */
+
+
+calcular.onclick = () => {
+    calculaPeso()
+
+}
+
+function calculaPeso() {
+    let pesoPkm = Number(pesoPokemon.textContent.match(/\d/g).join(''))
+    if (Number(pesoUser.value === "" || 0)) {
+        resultado.innerText = 'Ingresa tu peso y tu altura!'
+    } else if (Number(pesoUser.value) === pesoPkm) {
+        resultado.innerText = `Pesas ${pesoUser.value}kg, igual que ${nombre.textContent}!`
+    } else if (Number(pesoUser.value) < pesoPkm) {
+        resultado.innerText = `Pesas ${pesoUser.value}kg, menos que ${nombre.textContent}!`
+    } else if (Number(pesoUser.value) > pesoPkm) {
+        resultado.innerText = `Pesas ${pesoUser.value}kg, mas que ${nombre.textContent}!`
+    } else {
+        resultado.innerText = 'Ingresa tu peso y tu altura!'
+    }
+}
