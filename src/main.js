@@ -234,15 +234,15 @@ function calculaPeso() {
     let difPesoMenos = pesoPkm - Number(pesoUser.value)
 
     if (Number(pesoUser.value === "" || 0)) {
-        resultadoPeso.innerText = 'Ingresa tu peso y tu altura!'
+        resultadoPeso.innerText = 'Enter your weight!'
     } else if (Number(pesoUser.value) === pesoPkm) {
-        resultadoPeso.innerText = `Pesas igual que ${nombre.textContent}, y`
+        resultadoPeso.innerText = `Your weight is the same as ${nombre.textContent} and`
     } else if (Number(pesoUser.value) < pesoPkm) {
-        resultadoPeso.innerText = `Pesas ${difPesoMenos}kg menos que ${nombre.textContent}, y`
+        resultadoPeso.innerText = `You weight ${difPesoMenos}kg less than ${nombre.textContent} and`
     } else if (Number(pesoUser.value) > pesoPkm) {
-        resultadoPeso.innerText = `Pesas ${difPesoMas}kg más que ${nombre.textContent}, y`
+        resultadoPeso.innerText = `You weight ${difPesoMas}kg more than ${nombre.textContent} and`
     } else {
-        resultadoPeso.innerText = 'Ingresa tu peso y tu altura!'
+        resultadoPeso.innerText = 'Enter your weight!'
     }
 }
 
@@ -252,14 +252,14 @@ function calculaAltura() {
     let difAlturaMenos = alturaPkm - Number(alturaUser.value)
 
     if (Number(alturaUser.value === "" || 0)) {
-        resultadoAltura.innerText = 'Ingresa tu peso y tu altura!'
+        resultadoAltura.innerText = 'Enter your height!'
     } else if (Number(alturaUser.value) === alturaPkm) {
-        resultadoAltura.innerText = `mides igual que ${nombre.textContent}!`
+        resultadoAltura.innerText = `your height is the same as ${nombre.textContent}!`
     } else if (Number(alturaUser.value) < alturaPkm) {
-        resultadoAltura.innerText = `mides ${difAlturaMenos}cm menos!`
+        resultadoAltura.innerText = `you measure ${difAlturaMenos}cm less!`
     } else if (Number(alturaUser.value) > alturaPkm) {
-        resultadoAltura.innerText = `mides ${difAlturaMas}cm más!`
+        resultadoAltura.innerText = `you measure ${difAlturaMas}cm more!`
     } else {
-        resultadoAltura.innerText = 'Ingresa tu peso y tu altura!'
+        resultadoAltura.innerText = 'Enter your height!'
     }
 }
