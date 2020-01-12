@@ -211,18 +211,6 @@ function muestraShinyBackFem() {
     imgShinyFemBack.className = 'poke-img'
 }
 
-/*
-Numeros por generacion:
-I: 0-151
-II: 152-251
-III: 252-386
-IV: 387-493
-V: 494-649
-VI: 650-721
-VII: 722-809
-*/
-
-
 calcular.onclick = () => {
     calculaPeso()
     calculaAltura()
@@ -265,3 +253,14 @@ function calculaAltura() {
 }
 
 document.getElementById("current-year").innerHTML = new Date().getFullYear();
+
+/*
+Numeros por generacion:
+I: 0-151
+II: 152-251
+III: 252-386
+IV: 387-493
+V: 494-649
+VI: 650-721
+VII: 722-809
+*/
