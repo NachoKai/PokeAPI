@@ -263,3 +263,5 @@ function calculaAltura() {
         resultadoAltura.innerText = 'Enter your height!'
     }
 }
+
+document.getElementById("current-year").innerHTML = new Date().getFullYear();

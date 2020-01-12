@@ -9,51 +9,52 @@
 </head>
 
 <body>
-  <img class="title" src="img/title.png" alt="PokeAPI!" />
+  <div class="container">
+    <img class="title" src="img/title.png" alt="PokeAPI!" />
 
-  <div class="pokemon-list" id="lista-pokemon">
-    <div class="pokemon" id="pokemon">
-      <img class="poke-img" src="" id="poke-img">
-      <img class="poke-img" src="" id="poke-img-back">
-      <img class="poke-img" src="" id="poke-img-shiny">
-      <img class="poke-img" src="" id="poke-img-shiny-back">
-      <img class="poke-img" src="" id="poke-img-fem">
-      <img class="poke-img" src="" id="poke-img-fem-back">
-      <img class="poke-img" src="" id="poke-img-shiny-fem">
-      <img class="poke-img" src="" id="poke-img-shiny-fem-back">
-      <div id="btn">
+    <div class="pokemon-list" id="lista-pokemon">
+      <div class="pokemon" id="pokemon">
+        <img class="poke-img" src="" id="poke-img">
+        <img class="poke-img" src="" id="poke-img-back">
+        <img class="poke-img" src="" id="poke-img-shiny">
+        <img class="poke-img" src="" id="poke-img-shiny-back">
+        <img class="poke-img" src="" id="poke-img-fem">
+        <img class="poke-img" src="" id="poke-img-fem-back">
+        <img class="poke-img" src="" id="poke-img-shiny-fem">
+        <img class="poke-img" src="" id="poke-img-shiny-fem-back">
+        <div id="btn">
+        </div>
+        <p id="poke-name"></p>
+        <b>
+          <p id="poke-number"></p>
+        </b>
+        <span id="poke-type-a"></span>
+        <span id="poke-type-b"></span>
+        <p id="poke-weight"></p>
+        <p id="poke-height"></p>
       </div>
-      <p id="poke-name"></p>
-      <b>
-        <p id="poke-number"></p>
-      </b>
-      <span id="poke-type-a"></span>
-      <span id="poke-type-b"></span>
-      <p id="poke-weight"></p>
-      <p id="poke-height"></p>
     </div>
+    <br>
+    <div class="gif-btn">
+      <button class="btn btn--s" id="poke-btn" onclick="consultarPokemones()">Get Pokemon!</button> 
+      <button class="btn btn--s" id="poke-btn-gif">Get GIF!</button>
+    </div>
+
+    <div class="hidden" id="datos">
+      <label for="peso-usuario">Insert your weight:</label>
+      <input type="number" name="peso" id="peso-usuario" min="0" max="500" placeholder="000" required>kg.<br>
+      <label for="altura-usuario">Insert your height:</label>
+      <input type="number" name="altura" id="altura-usuario" min="0" max="500" placeholder="000" required>cm.<br>
+      <button class="btn btn--s" id="calcular-usuario" disabled>Calculate</button>
+      <div class="resultado-peso" id="resultado-peso" style="font-weight: bold;"></div>
+      <div class="resultado-altura" id="resultado-altura" style="font-weight: bold;"></div>
+    </div>
+    <br>
+    <div id="gifs"></div>
+    <footer>
+      <a href="https://github.com/NachoKai" class="link">Nacho Caiafa </a> &copy; <span id="current-year"></span>
+    </footer>
   </div>
-  <br>
-  <duv class="gif-btn">
-    <button class="btn btn--s" id="poke-btn" onclick="consultarPokemones()">Get Pokemon!</button> 
-    <button class="btn btn--s" id="poke-btn-gif">Get GIF!</button>
-  </duv>
-
-  <div class="hidden" id="datos">
-    <label for="peso-usuario">Insert your weight:</label>
-    <input type="number" name="peso" id="peso-usuario" min="0" max="500" placeholder="000" required>kg.<br>
-    <label for="altura-usuario">Insert your height:</label>
-    <input type="number" name="altura" id="altura-usuario" min="0" max="500" placeholder="000" required>cm.<br>
-    <button class="btn btn--s" id="calcular-usuario" disabled>Calculate</button>
-    <div class="resultado-peso" id="resultado-peso" style="font-weight: bold;"></div>
-    <div class="resultado-altura" id="resultado-altura" style="font-weight: bold;"></div>
-  </div>
-
-  <br>
-
-  <div id="gifs"></div>
-
-  <script src="https://sdk.scdn.co/spotify-player.js"></script>
 
   <script src="src/main.js"></script>
   <script src="src/giphy.js"></script>
