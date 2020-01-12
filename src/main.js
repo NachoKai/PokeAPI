@@ -22,6 +22,7 @@ let listaPokemon = document.getElementById("lista-pokemon"),
     alturaUser = document.getElementById("altura-usuario"),
     resultadoPeso = document.getElementById("resultado-peso"),
     resultadoAltura = document.getElementById("resultado-altura"),
+    comparaciones = document.getElementById("datos"),
     calcular = document.getElementById("calcular-usuario")
 
 
@@ -46,6 +47,7 @@ function showBtns() {
     const btns = document.querySelector("#btn");
     const div = document.createElement("div");
     div.className = "btns"
+    comparaciones.className = "datos"
     document.getElementById("calcular-usuario").disabled = false;
     div.innerHTML = `
     <button class="btn btn--s" id="leftBtn" onclick="turnFn()">
