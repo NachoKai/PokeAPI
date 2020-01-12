@@ -31,8 +31,21 @@ body {
 }
 
 input {
-  max-width: 70px;
-  min-height: 20px;
+  border-radius: .25em;
+  border-style: solid;
+  border-width: 1px;
+  color: #111;
+  display: inline-block;
+  font-family: avenir, helvetica, roboto, arial, sans-serif;
+  letter-spacing: .15em;
+  margin-bottom: .5em;
+  padding: 1em 1.5em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color .2s, background-color .2s, border .2s;
+
+  max-width: 60px;
+  min-height: 25px;
   padding: 5px;
   margin: 5px;
 }

@@ -1,5 +1,4 @@
 let listaPokemon = document.getElementById("lista-pokemon"),
-    pokeBtn = document.getElementById("poke-btn"),
     item = listaPokemon.querySelector(`#pokemon`),
     img = item.querySelector(`#poke-img`),
     imgBack = item.querySelector(`#poke-img-back`),
@@ -11,8 +10,8 @@ let listaPokemon = document.getElementById("lista-pokemon"),
     imgShinyFemBack = item.querySelector(`#poke-img-shiny-fem-back`),
     nombre = item.querySelector(`#poke-name`),
     numero = item.querySelector(`#poke-number`),
-    peso = item.querySelector(`#poke-weight`),
-    altura = item.querySelector(`#poke-height`),
+    pesoPokemon = item.querySelector(`#poke-weight`),
+    alturaPokemon = item.querySelector(`#poke-height`),
     tipoA = item.querySelector(`#poke-type-a`),
     tipoB = item.querySelector(`#poke-type-b`),
     shinyBtn = item.querySelector(`#shinyBtn`),
@@ -25,12 +24,25 @@ let listaPokemon = document.getElementById("lista-pokemon"),
     calcular = document.getElementById("calcular-usuario")
 
 calcular.onclick = () => {
-    let peso = pesoUser.value
-    let altura = alturaUser.value
-    resultado.innerText = `Pesas ${peso} y altura ${altura}`
+    resultado.innerText = `Pesas ${pesoUser.value} y altura ${alturaUser.value}`
 
-    console.log(pesoUser.value)
-    console.log(alturaUser.value)
+
+}
+
+function calculaPeso() {
+    if (pesoUser.value === pesoPokemon.value) {
+        resultado.innerText = `Pesas ${pesoUser.value} igual que !`
+    } else if (pesoUser.value < pesoPokemon.value) {
+        resultado.innerText = `Pesas ${pesoUser.value} menos que !`
+    } else if (pesoUser.value > pesoPokemon.value) {
+        resultado.innerText = `Pesas ${pesoUser.value} mas que !`
+    }
+}
+
+function calculaAltura() {
+    if (condition) {
+
+    }
 }
 
 function consultarPokemones() {
@@ -48,6 +60,7 @@ function showBtns() {
     const btns = document.querySelector("#btn");
     const div = document.createElement("div");
     div.className = "btns"
+    document.getElementById("calcular-usuario").disabled = false;
     div.innerHTML = `
     <button class="btn btn--s" id="leftBtn" onclick="turnFn()">
     << </button> <button class="btn btn--s" id="shinyBtn" onclick="shinyBtnFn()">Shiny ON/OFF
@@ -86,8 +99,8 @@ function crearPokemon(pokemon) {
     imgShinyFemBack.className = 'hidden'
     nombre.textContent = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)
     numero.textContent = `#${pokemon.id}`
-    peso.textContent = `Weight: ${Math.round((pokemon.weight) / 10)} kg.`
-    altura.textContent = `Height: ${Math.round((pokemon.height) * 10)} cm.`
+    pesoPokemon.textContent = `Weight: ${Math.round((pokemon.weight) / 10)} kg.`
+    alturaPokemon.textContent = `Height: ${Math.round((pokemon.height) * 10)} cm.`
     tipoA.textContent = `Type A: ${pokemon.types[0].type.name.charAt(0).toUpperCase() + pokemon.types[0].type.name.slice(1)}`
     if (pokemon.types[1] === undefined) {
         return tipoB.textContent = ''

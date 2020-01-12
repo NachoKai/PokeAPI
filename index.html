@@ -42,10 +42,10 @@
 
   <div class="datos">
     <label for="peso-usuario">Inserta tu peso en kg:</label>
-    <input type="number" name="peso" id="peso-usuario" placeholder="Ej: 65"><br>
+    <input type="number" name="peso" id="peso-usuario" min="0" max="500" placeholder="000" required><br>
     <label for="altura-usuario">Inserta tu altura en cm:</label>
-    <input type="number" name="altura" id="altura-usuario" placeholder="Ej: 160"><br>
-    <button class="btn btn--s" id="calcular-usuario">Calcular</button>
+    <input type="number" name="altura" id="altura-usuario" min="0" max="500" placeholder="000" required><br>
+    <button class="btn btn--s" id="calcular-usuario" disabled>Calcular</button>
     <div class="resultado" id="resultado">Resultado</div>
   </div>
 
