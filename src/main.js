@@ -256,9 +256,9 @@ function calculaAltura() {
     } else if (Number(alturaUser.value) === alturaPkm) {
         resultadoAltura.innerText = `your height is the same as ${nombre.textContent}!`
     } else if (Number(alturaUser.value) < alturaPkm) {
-        resultadoAltura.innerText = `you measure ${difAlturaMenos}cm less!`
+        resultadoAltura.innerText = `you are ${difAlturaMenos}cm smaller!`
     } else if (Number(alturaUser.value) > alturaPkm) {
-        resultadoAltura.innerText = `you measure ${difAlturaMas}cm more!`
+        resultadoAltura.innerText = `you are ${difAlturaMas}cm taller!`
     } else {
         resultadoAltura.innerText = 'Enter your height!'
     }
