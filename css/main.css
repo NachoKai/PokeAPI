@@ -46,6 +46,20 @@ body {
   border-width: 1px;
 }
 
+input {
+  max-width: 70px;
+  min-height: 20px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.datos {
+  padding: 5px;
+  margin: 5px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 #poke-boton {
   padding: 5px;
   display: -webkit-box;

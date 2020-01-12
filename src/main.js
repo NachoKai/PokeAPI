@@ -18,7 +18,20 @@ let listaPokemon = document.getElementById("lista-pokemon"),
     shinyBtn = item.querySelector(`#shinyBtn`),
     leftBtn = item.querySelector(`#leftBtn`),
     rightBtn = item.querySelector(`#rightBtn`),
-    sexBtn = item.querySelector(`#sexBtn`)
+    sexBtn = item.querySelector(`#sexBtn`),
+    pesoUser = document.getElementById("peso-usuario"),
+    alturaUser = document.getElementById("altura-usuario"),
+    resultado = document.getElementById("resultado"),
+    calcular = document.getElementById("calcular-usuario")
+
+calcular.onclick = () => {
+    let peso = pesoUser.value
+    let altura = alturaUser.value
+    resultado.innerText = `Pesas ${peso} y altura ${altura}`
+
+    console.log(pesoUser.value)
+    console.log(alturaUser.value)
+}
 
 function consultarPokemones() {
     let pokeID = Math.round(Math.random() * 493);

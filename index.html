@@ -39,12 +39,25 @@
     <button class="btn btn--s" id="poke-btn" onclick="consultarPokemones()">Get Pokemon!</button> 
     <button class="btn btn--s" id="poke-btn-gif">Get GIF!</button>
   </duv>
+
+  <div class="datos">
+    <label for="peso-usuario">Inserta tu peso en kg:</label>
+    <input type="number" name="peso" id="peso-usuario" placeholder="Ej: 65"><br>
+    <label for="altura-usuario">Inserta tu altura en cm:</label>
+    <input type="number" name="altura" id="altura-usuario" placeholder="Ej: 160"><br>
+    <button class="btn btn--s" id="calcular-usuario">Calcular</button>
+    <div class="resultado" id="resultado">Resultado</div>
+  </div>
+
   <br>
   <p style="text-align: center;">Free GIFs!</p>
   <div id="gifs"></div>
 
+  <script src="https://sdk.scdn.co/spotify-player.js"></script>
+
   <script src="src/main.js"></script>
   <script src="src/giphy.js"></script>
+  <script src="src/spotify.js"></script>
 </body>
 
 </html>
