@@ -20,7 +20,8 @@ let listaPokemon = document.getElementById("lista-pokemon"),
     sexBtn = item.querySelector(`#sexBtn`),
     pesoUser = document.getElementById("peso-usuario"),
     alturaUser = document.getElementById("altura-usuario"),
-    resultado = document.getElementById("resultado"),
+    resultadoPeso = document.getElementById("resultado-peso"),
+    resultadoAltura = document.getElementById("resultado-altura"),
     calcular = document.getElementById("calcular-usuario")
 
 
@@ -222,20 +223,41 @@ VII: 722-809
 
 calcular.onclick = () => {
     calculaPeso()
-
+    calculaAltura()
 }
 
 function calculaPeso() {
     let pesoPkm = Number(pesoPokemon.textContent.match(/\d/g).join(''))
+    let difPesoMas = Number(pesoUser.value) - pesoPkm
+    let difPesoMenos = pesoPkm - Number(pesoUser.value)
+
     if (Number(pesoUser.value === "" || 0)) {
-        resultado.innerText = 'Ingresa tu peso y tu altura!'
+        resultadoPeso.innerText = 'Ingresa tu peso y tu altura!'
     } else if (Number(pesoUser.value) === pesoPkm) {
-        resultado.innerText = `Pesas ${pesoUser.value}kg, igual que ${nombre.textContent}!`
+        resultadoPeso.innerText = `Pesas igual que ${nombre.textContent}, y`
     } else if (Number(pesoUser.value) < pesoPkm) {
-        resultado.innerText = `Pesas ${pesoUser.value}kg, menos que ${nombre.textContent}!`
+        resultadoPeso.innerText = `Pesas ${difPesoMenos}kg menos que ${nombre.textContent}, y`
     } else if (Number(pesoUser.value) > pesoPkm) {
-        resultado.innerText = `Pesas ${pesoUser.value}kg, mas que ${nombre.textContent}!`
+        resultadoPeso.innerText = `Pesas ${difPesoMas}kg más que ${nombre.textContent}, y`
     } else {
-        resultado.innerText = 'Ingresa tu peso y tu altura!'
+        resultadoPeso.innerText = 'Ingresa tu peso y tu altura!'
+    }
+}
+
+function calculaAltura() {
+    let alturaPkm = Number(alturaPokemon.textContent.match(/\d/g).join(''))
+    let difAlturaMas = Number(alturaUser.value) - alturaPkm
+    let difAlturaMenos = alturaPkm - Number(alturaUser.value)
+
+    if (Number(alturaUser.value === "" || 0)) {
+        resultadoAltura.innerText = 'Ingresa tu peso y tu altura!'
+    } else if (Number(alturaUser.value) === alturaPkm) {
+        resultadoAltura.innerText = `mides igual que ${nombre.textContent}!`
+    } else if (Number(alturaUser.value) < alturaPkm) {
+        resultadoAltura.innerText = `mides ${difAlturaMenos}cm menos!`
+    } else if (Number(alturaUser.value) > alturaPkm) {
+        resultadoAltura.innerText = `mides ${difAlturaMas}cm más!`
+    } else {
+        resultadoAltura.innerText = 'Ingresa tu peso y tu altura!'
     }
 }

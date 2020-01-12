@@ -10,8 +10,6 @@
 
 <body>
 
-  <p style="text-align: center;">Get Pokemons!</p>
-
   <div class="pokemon-list" id="lista-pokemon">
     <div class="pokemon" id="pokemon">
       <img class="poke-img" src="" id="poke-img">
@@ -41,16 +39,17 @@
   </duv>
 
   <div class="datos">
-    <label for="peso-usuario">Inserta tu peso en kg:</label>
-    <input type="number" name="peso" id="peso-usuario" min="0" max="500" placeholder="000" required><br>
-    <label for="altura-usuario">Inserta tu altura en cm:</label>
-    <input type="number" name="altura" id="altura-usuario" min="0" max="500" placeholder="000" required><br>
+    <label for="peso-usuario">Inserta tu peso:</label>
+    <input type="number" name="peso" id="peso-usuario" min="0" max="500" placeholder="000" required>kg.<br>
+    <label for="altura-usuario">Inserta tu altura:</label>
+    <input type="number" name="altura" id="altura-usuario" min="0" max="500" placeholder="000" required>cm.<br>
     <button class="btn btn--s" id="calcular-usuario" disabled>Calcular</button>
-    <div class="resultado" id="resultado">Resultado</div>
+    <div class="resultado-peso" id="resultado-peso" style="font-weight: bold;"></div>
+    <div class="resultado-altura" id="resultado-altura" style="font-weight: bold;"></div>
   </div>
 
   <br>
-  <p style="text-align: center;">Free GIFs!</p>
+
   <div id="gifs"></div>
 
   <script src="https://sdk.scdn.co/spotify-player.js"></script>
