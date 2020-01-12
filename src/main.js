@@ -226,7 +226,7 @@ function calculaPeso() {
     } else if (Number(pesoUser.value) === pesoPkm) {
         resultadoPeso.innerText = `Your weight is the same as ${nombre.textContent} and`
     } else if (Number(pesoUser.value) < pesoPkm) {
-        resultadoPeso.innerText = `You are ${difPesoMenos}kg less heavy ${nombre.textContent} and`
+        resultadoPeso.innerText = `You are ${difPesoMenos}kg less heavy than ${nombre.textContent} and`
     } else if (Number(pesoUser.value) > pesoPkm) {
         resultadoPeso.innerText = `You are ${difPesoMas}kg heavier than ${nombre.textContent} and`
     } else {
