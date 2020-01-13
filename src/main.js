@@ -94,6 +94,8 @@ function crearPokemon(pokemon) {
 function shinyBtnFn() {
     if (img.className === 'poke-img') {
         muestraShiny()
+    } else if (img.className === 'hidden' && imgBack.className === 'poke-img') {
+        muestraShinyBack()
     } else {
         muestraDefault()
     }
@@ -102,6 +104,10 @@ function shinyBtnFn() {
 function turnFn() {
     if (img.className === 'poke-img') {
         muestraDefaultBack()
+    } else if (img.className === 'hidden' && imgShiny.className === 'poke-img') {
+        muestraShinyBack()
+    } else if (img.className === 'hidden' && imgShinyBack.className === 'poke-img') {
+        muestraShiny()
     } else {
         muestraDefault()
     }
@@ -112,6 +118,8 @@ function sexFn() {
         muestraDefaultFem()
     } else if (imgFem.getAttribute("src") === "null") {
         muestraDefault()
+    } else if (img.className === 'hidden' && imgBack.className === 'poke-img' && imgFem.getAttribute("src") !== "null") {
+        muestraDefaultBackFem()
     } else {
         muestraDefault()
     }
