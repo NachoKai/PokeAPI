@@ -65,10 +65,13 @@ input {
 }
 
 .container {
-  margin-left: auto;
-  margin-right: auto;
-  height: calc(100vh - 25px);
   max-width: 500px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .datos {
@@ -141,8 +144,8 @@ footer {
 }
 
 .gifs {
+  padding: 10px !important;
   background: rgb(24, 24, 24);
-  padding: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
