@@ -109,11 +109,11 @@ function turnFn() {
 
 function sexFn() {
     if (img.className === 'poke-img' && imgFem.getAttribute('src') !== "https://nachokai.github.io/PokeAPI/null") {
-        muestraDefaultFem()
+        muestraDefault()
     } else if (imgFem.getAttribute('src') === "https://nachokai.github.io/PokeAPI/null") {
         muestraDefault()
     } else {
-        muestraDefault()
+        muestraDefaultFem()
     }
 }
 
