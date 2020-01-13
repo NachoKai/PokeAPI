@@ -1,0 +1,20 @@
+{
+  "name": "PokeAPI",
+  "version": "1.0.0",
+  "description": "• PokeAPI (https://pokeapi.co)  \r • GiphyAPI (https://developers.giphy.com)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NachoKai/PokeAPI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NachoKai/PokeAPI/issues"
+  },
+  "homepage": "https://github.com/NachoKai/PokeAPI#readme"
+}

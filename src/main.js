@@ -98,7 +98,7 @@ function shinyBtnFn() {
         muestraShinyBack()
     } else if (imgShinyBack.className === 'poke-img' && imgBack.className === 'hidden') {
         muestraDefaultBack()
-    }else {
+    } else {
         muestraDefault()
     }
 }
@@ -110,6 +110,12 @@ function turnFn() {
         muestraShinyBack()
     } else if (img.className === 'hidden' && imgShinyBack.className === 'poke-img') {
         muestraShiny()
+    } else if (imgFem.className === 'poke-img' && imgFem.getAttribute("src") !== "null" && imgFemBack.getAttribute("src") !== "null") {
+        muestraDefaultBackFem()
+    } else if (imgFem.className === 'poke-img' && imgFem.getAttribute("src") === "null") {
+        muestraDefaultBack()
+    } else if (imgFemBack.className === 'poke-img') {
+        muestraDefaultFem()
     } else {
         muestraDefault()
     }
@@ -122,6 +128,8 @@ function sexFn() {
         muestraDefault()
     } else if (img.className === 'hidden' && imgBack.className === 'poke-img' && imgFem.getAttribute("src") !== "null") {
         muestraDefaultBackFem()
+    } else if (imgFemBack.className === 'poke-img') {
+        muestraDefaultBack()
     } else {
         muestraDefault()
     }
