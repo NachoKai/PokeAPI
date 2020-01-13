@@ -6,6 +6,15 @@
   box-sizing: border-box;
   font-family: 'Lato', sans-serif;
   transition: all 0.2s ease;
+  outline: 0;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
