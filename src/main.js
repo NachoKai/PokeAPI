@@ -25,13 +25,6 @@ let listaPokemon = document.getElementById("lista-pokemon"),
     comparaciones = document.getElementById("datos"),
     calcular = document.getElementById("calcular-usuario")
 
-
-function calculaAltura() {
-    if (condition) {
-
-    }
-}
-
 function consultarPokemones() {
     let pokeID = Math.round(Math.random() * 493);
     consultarPokemon(pokeID);
@@ -48,6 +41,7 @@ function showBtns() {
     const div = document.createElement("div");
     div.className = "btns"
     comparaciones.className = "datos"
+    listaPokemon.className = "pokemon-list"
     document.getElementById("calcular-usuario").disabled = false;
     div.innerHTML = `
     <button class="btn btn--s" id="leftBtn" onclick="turnFn()">

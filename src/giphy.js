@@ -1,4 +1,5 @@
-let pokeBtnGif = document.getElementById("poke-btn-gif")
+let pokeBtnGif = document.getElementById("poke-btn-gif"),
+gifs = document.getElementById("gifs")
 
 pokeBtnGif.onclick = function () {
     let request = new XMLHttpRequest();
@@ -13,6 +14,7 @@ pokeBtnGif.onclick = function () {
         const gifs = document.querySelector("#gifs");
         const div = document.createElement("div");
         div.className = "gif"
+        gifs.className = "gifs"
         gif.setAttribute('src', originalUrl);
         div.appendChild(gif);
         borrarGif()
