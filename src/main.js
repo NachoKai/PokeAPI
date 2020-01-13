@@ -108,9 +108,9 @@ function turnFn() {
 }
 
 function sexFn() {
-    if (img.className === 'poke-img' && imgFem.getAttribute('src') !== "") {
+    if (img.className === 'poke-img' && imgFem.getAttribute('src') !== "https://nachokai.github.io/PokeAPI/null") {
         muestraDefaultFem()
-    } else if (imgFem.getAttribute('src') === "") {
+    } else if (imgFem.getAttribute('src') === "https://nachokai.github.io/PokeAPI/null") {
         muestraDefault()
     } else {
         muestraDefault()
