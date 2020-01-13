@@ -96,7 +96,9 @@ function shinyBtnFn() {
         muestraShiny()
     } else if (img.className === 'hidden' && imgBack.className === 'poke-img') {
         muestraShinyBack()
-    } else {
+    } else if (imgShinyBack.className === 'poke-img' && imgBack.className === 'hidden') {
+        muestraDefaultBack()
+    }else {
         muestraDefault()
     }
 }
