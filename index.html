@@ -19,7 +19,6 @@
   <div class="cont">
     <img class="title" src="img/title.png" alt="PokeAPI!" />
     <div class="hidden" id="lista-pokemon">
-      <i class="fas fa-arrow-circle-left fa-2x" id="prev"></i>
       <div class="pokemon" id="pokemon">
         <img class="poke-img" src="" id="poke-img">
         <img class="poke-img" src="" id="poke-img-back">
@@ -32,9 +31,11 @@
         <div id="button">
         </div>
         <div class="name-num">
+          <i class="fas fa-arrow-circle-left fa-2x" id="prev"></i>  
           <p id="poke-name"></p><b>
             <p id="poke-number"></p>
-          </b>
+          </b>  
+          <i class="fas fa-arrow-circle-right fa-2x" id="next"></i>
         </div>
         <div class="types">
           <span id="poke-type-a"></span>
@@ -48,7 +49,6 @@
         <div id="desc"></div>
         <div id="hd"><canvas id="myChart" style="width:300px;height:300px;"></canvas></div>
       </div>
-      <i class="fas fa-arrow-circle-right fa-2x" id="next"></i>
     </div>
     <div class="gif-button">
       <button class="button button--s" id="poke-button" onclick="consultarPokemones()">Get Random!</button> 
