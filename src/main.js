@@ -36,6 +36,15 @@ function consultarPokemones() {
 }
 
 function consultarPokemon(id) {
+    next.addEventListener("click",()=>{
+        id++;
+        consultarPokemon(id)
+    });
+    prev.addEventListener("click",()=>{
+        id--;
+        consultarPokemon(id)
+    });
+    
     fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(response => response.json()).then((pokemon) => crearPokemon(pokemon))
 }
 
@@ -127,8 +136,6 @@ function crearPokemon(pokemon) {
     } else {
         tipoB.innerHTML = `  <b>Type B</b>: ${pokemon.types[1].type.name.charAt(0).toUpperCase() + pokemon.types[1].type.name.slice(1)}`
     }
-
-
 }
 
 function shinybuttonFn() {
