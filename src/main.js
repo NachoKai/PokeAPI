@@ -113,6 +113,22 @@ function crearPokemon(pokemon) {
         tipoB.innerHTML = `  <b>Type B</b>: ${pokemon.types[1].type.name.charAt(0).toUpperCase() + pokemon.types[1].type.name.slice(1)}`
     }
 
+    let stats = pokemon.stats;
+    let ctx = document.getElementById('myChart').getContext('2d');
+    let chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Speed', 'Special-Def', 'Special-Att', 'Defence', 'Attack', 'HP'],
+            datasets: [{
+                label: 'Stats:',
+                backgroundColor: ['#C39BD3', '#76D7C4', '#F9E79F', '#F5B7B1', '#AED6F1', '#E5E7E9'],
+                borderColor: ['#C39BD3', '#76D7C4', '#F9E79F', '#F5B7B1', '#AED6F1', '#E5E7E9'],
+                data: [stats[0].base_stat, stats[1].base_stat, stats[2].base_stat, stats[3].base_stat, stats[4].base_stat, stats[5].base_stat]
+            }]
+        },
+        options: {}
+    });
+
 }
 
 function shinybuttonFn() {
@@ -289,6 +305,7 @@ function calculaAltura() {
 }
 
 document.getElementById("current-year").innerHTML = new Date().getFullYear();
+
 
 /*
 Numeros por generacion:
