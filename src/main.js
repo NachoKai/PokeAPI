@@ -14,49 +14,52 @@ let listaPokemon = document.getElementById("lista-pokemon"),
     alturaPokemon = item.querySelector(`#poke-height`),
     tipoA = item.querySelector(`#poke-type-a`),
     tipoB = item.querySelector(`#poke-type-b`),
-    shinyBtn = item.querySelector(`#shinyBtn`),
-    leftBtn = item.querySelector(`#leftBtn`),
-    rightBtn = item.querySelector(`#rightBtn`),
-    sexBtn = item.querySelector(`#sexBtn`),
+    abilities = item.querySelector(`#poke-abilities`),
+    shinybutton = item.querySelector(`#shinybutton`),
+    leftbutton = item.querySelector(`#leftbutton`),
+    rightbutton = item.querySelector(`#rightbutton`),
+    sexbutton = item.querySelector(`#sexbutton`),
     pesoUser = document.getElementById("peso-usuario"),
     alturaUser = document.getElementById("altura-usuario"),
     resultadoPeso = document.getElementById("resultado-peso"),
     resultadoAltura = document.getElementById("resultado-altura"),
     comparaciones = document.getElementById("datos"),
-    calcular = document.getElementById("calcular-usuario")
+    calcular = document.getElementById("calcular-usuario"),
+    prev = document.getElementById("prev"),
+    next = document.getElementById("next")
 
 function consultarPokemones() {
     let pokeID = Math.round(Math.random() * 493);
     consultarPokemon(pokeID);
-    deleteBtns()
-    showBtns()
+    deletebuttons()
+    showbuttons()
 }
 
 function consultarPokemon(id) {
     fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(response => response.json()).then((pokemon) => crearPokemon(pokemon))
 }
 
-function showBtns() {
-    const btns = document.querySelector("#btn");
+function showbuttons() {
+    const buttons = document.querySelector("#button");
     const div = document.createElement("div");
-    div.className = "btns"
+    div.className = "buttons"
     comparaciones.className = "datos"
     listaPokemon.className = "pokemon-list"
     document.getElementById("calcular-usuario").disabled = false;
     div.innerHTML = `
-    <button class="btn btn--s" id="leftBtn" onclick="turnFn()">
-    << </button> <button class="btn btn--s" id="shinyBtn" onclick="shinyBtnFn()">Shiny ON/OFF
+    <button class="button button--s" id="leftbutton" onclick="turnFn()">
+    << </button> <button class="button button--s" id="shinybutton" onclick="shinybuttonFn()">Shiny ON/OFF
     </button>
-    <button class="btn btn--s" id="sexBtn" onclick="sexFn()"> ♂/♀ </button>
-    <button class="btn btn--s" id="rightBtn" onclick="turnFn()"> >> </button>
+    <button class="button button--s" id="sexbutton" onclick="sexFn()"> ♂/♀ </button>
+    <button class="button button--s" id="rightbutton" onclick="turnFn()"> >> </button>
     `
-    btns.appendChild(div);
+    buttons.appendChild(div);
 }
 
-function deleteBtns() {
-    const $btns = document.querySelectorAll(".btns")
-    for (let i = 0; i < $btns.length; i++) {
-        $btns[i].remove()
+function deletebuttons() {
+    const $buttons = document.querySelectorAll(".buttons")
+    for (let i = 0; i < $buttons.length; i++) {
+        $buttons[i].remove()
     }
     event.preventDefault();
 }
@@ -78,19 +81,41 @@ function crearPokemon(pokemon) {
     imgShinyFem.className = 'hidden'
     imgShinyFemBack.src = pokemon.sprites.back_shiny_female
     imgShinyFemBack.className = 'hidden'
-    nombre.textContent = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)
-    numero.textContent = `#${pokemon.id}`
-    pesoPokemon.textContent = `Weight: ${Math.round((pokemon.weight) / 10)} kg.`
-    alturaPokemon.textContent = `Height: ${Math.round((pokemon.height) * 10)} cm.`
-    tipoA.textContent = `Type A: ${pokemon.types[0].type.name.charAt(0).toUpperCase() + pokemon.types[0].type.name.slice(1)}`
-    if (pokemon.types[1] === undefined) {
-        return tipoB.textContent = ''
-    } else {
-        tipoB.textContent = `Type B: ${pokemon.types[1].type.name.charAt(0).toUpperCase() + pokemon.types[1].type.name.slice(1)}`
+
+    nombre.innerHTML = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)
+    numero.innerHTML = `  #${pokemon.id}`
+
+    let desc = document.getElementById('desc');
+    let abilities = pokemon.abilities;
+    let moves = pokemon.moves;
+    desc.innerHTML = "</p><p id='abty'><b>Abilities: </b></p>";
+    for (let i = 0; i < abilities.length; i++) {
+        abty.innerHTML += "<span class='badge badge-danger'>" + abilities[i].ability.name + "</span>&nbsp;";
     }
+    abty.innerHTML += "<p><b>Moves: </b><p id='mvs'></p></p>";
+    for (let i = 0; i < moves.length; i++) {
+        if (i % 2 == 0)
+            mvs.innerHTML += "<span class='badge badge-light'>" + moves[i].move.name + "</span>&nbsp;";
+        else if (i % 3 == 0)
+            mvs.innerHTML += "<span class='badge badge-info'>" + moves[i].move.name + "</span>&nbsp;";
+        else if (i % 5 == 0)
+            mvs.innerHTML += "<span class='badge badge-danger'>" + moves[i].move.name + "</span>&nbsp;";
+        else
+            mvs.innerHTML += "<span class='badge badge-success'>" + moves[i].move.name + "</span>&nbsp;";
+    }
+
+    pesoPokemon.innerHTML = `<b>Weight</b>: ${Math.round((pokemon.weight) / 10)} kg.`
+    alturaPokemon.innerHTML = `<b>  Height</b>: ${Math.round((pokemon.height) * 10)} cm.`
+    tipoA.innerHTML = `<b>Type A</b>: ${pokemon.types[0].type.name.charAt(0).toUpperCase() + pokemon.types[0].type.name.slice(1)}`
+    if (pokemon.types[1] === undefined) {
+        return tipoB.innerHTML = ''
+    } else {
+        tipoB.innerHTML = `  <b>Type B</b>: ${pokemon.types[1].type.name.charAt(0).toUpperCase() + pokemon.types[1].type.name.slice(1)}`
+    }
+
 }
 
-function shinyBtnFn() {
+function shinybuttonFn() {
     if (img.className === 'poke-img') {
         muestraShiny()
     } else if (img.className === 'hidden' && imgBack.className === 'poke-img') {
@@ -228,32 +253,32 @@ calcular.onclick = () => {
 }
 
 function calculaPeso() {
-    let pesoPkm = Number(pesoPokemon.textContent.match(/\d/g).join(''))
+    let pesoPkm = Number(pesoPokemon.innerHTML.match(/\d/g).join(''))
     let difPesoMas = Number(pesoUser.value) - pesoPkm
     let difPesoMenos = pesoPkm - Number(pesoUser.value)
 
     if (Number(pesoUser.value === "" || 0)) {
         resultadoPeso.innerText = 'Enter your weight!'
     } else if (Number(pesoUser.value) === pesoPkm) {
-        resultadoPeso.innerText = `Your weight is the same as ${nombre.textContent} and`
+        resultadoPeso.innerText = `Your weight is the same as ${nombre.innerHTML} and`
     } else if (Number(pesoUser.value) < pesoPkm) {
-        resultadoPeso.innerText = `You are ${difPesoMenos}kg less heavy than ${nombre.textContent} and`
+        resultadoPeso.innerText = `You are ${difPesoMenos}kg less heavy than ${nombre.innerHTML} and`
     } else if (Number(pesoUser.value) > pesoPkm) {
-        resultadoPeso.innerText = `You are ${difPesoMas}kg heavier than ${nombre.textContent} and`
+        resultadoPeso.innerText = `You are ${difPesoMas}kg heavier than ${nombre.innerHTML} and`
     } else {
         resultadoPeso.innerText = 'Enter your weight!'
     }
 }
 
 function calculaAltura() {
-    let alturaPkm = Number(alturaPokemon.textContent.match(/\d/g).join(''))
+    let alturaPkm = Number(alturaPokemon.innerHTML.match(/\d/g).join(''))
     let difAlturaMas = Number(alturaUser.value) - alturaPkm
     let difAlturaMenos = alturaPkm - Number(alturaUser.value)
 
     if (Number(alturaUser.value === "" || 0)) {
         resultadoAltura.innerText = 'Enter your height!'
     } else if (Number(alturaUser.value) === alturaPkm) {
-        resultadoAltura.innerText = `your height is the same as ${nombre.textContent}!`
+        resultadoAltura.innerText = `your height is the same as ${nombre.innerHTML}!`
     } else if (Number(alturaUser.value) < alturaPkm) {
         resultadoAltura.innerText = `you are ${difAlturaMenos}cm smaller!`
     } else if (Number(alturaUser.value) > alturaPkm) {

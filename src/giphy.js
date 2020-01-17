@@ -1,7 +1,7 @@
-let pokeBtnGif = document.getElementById("poke-btn-gif"),
+let pokebuttonGif = document.getElementById("poke-button-gif"),
 gifs = document.getElementById("gifs")
 
-pokeBtnGif.onclick = function () {
+pokebuttonGif.onclick = function () {
     let request = new XMLHttpRequest();
     request.open('GET', 'https://api.giphy.com/v1/gifs/random?api_key=DwIUav0spoC6ragXjOACCY6g8sNp8hxO&tag=pokemon&rating=g');
     request.onload = function () {

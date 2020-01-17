@@ -6,13 +6,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/429b57eee3.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <div class="container">
-    <img class="title" src="img/title.png" alt="PokeAPI!" />
+  <div class="pokedex">
 
+  </div>
+
+  <div class="cont">
+    <img class="title" src="img/title.png" alt="PokeAPI!" />
     <div class="hidden" id="lista-pokemon">
+      <i class="fas fa-arrow-circle-left fa-2x" id="prev"></i>
       <div class="pokemon" id="pokemon">
         <img class="poke-img" src="" id="poke-img">
         <img class="poke-img" src="" id="poke-img-back">
@@ -22,21 +29,29 @@
         <img class="poke-img" src="" id="poke-img-fem-back">
         <img class="poke-img" src="" id="poke-img-shiny-fem">
         <img class="poke-img" src="" id="poke-img-shiny-fem-back">
-        <div id="btn">
+        <div id="button">
         </div>
-        <p id="poke-name"></p>
-        <b>
-          <p id="poke-number"></p>
-        </b>
-        <span id="poke-type-a"></span>
-        <span id="poke-type-b"></span>
-        <p id="poke-weight"></p>
-        <p id="poke-height"></p>
+        <div class="name-num">
+          <p id="poke-name"></p><b>
+            <p id="poke-number"></p>
+          </b>
+        </div>
+        <div class="types">
+          <span id="poke-type-a"></span>
+          <span id="poke-type-b"></span>
+        </div>
+        <div class="appearance">
+          <p id="poke-weight"></p>
+          <p id="poke-height"></p>
+        </div>
+        <p id="poke-abilities"></p>
+        <div id="desc"></div>
       </div>
+      <i class="fas fa-arrow-circle-right fa-2x" id="next"></i>
     </div>
-    <div class="gif-btn">
-      <button class="btn btn--s" id="poke-btn" onclick="consultarPokemones()">Get Random!</button> 
-      <button class="btn btn--s" id="poke-btn-gif">Get GIF!</button>
+    <div class="gif-button">
+      <button class="button button--s" id="poke-button" onclick="consultarPokemones()">Get Random!</button> 
+      <button class="button button--s" id="poke-button-gif">Get GIF!</button>
     </div>
 
     <div class="hidden" id="datos">
@@ -44,7 +59,7 @@
       <input type="number" name="peso" id="peso-usuario" min="0" max="500" placeholder="000" required>kg.<br>
       <label for="altura-usuario">Insert your height:</label>
       <input type="number" name="altura" id="altura-usuario" min="0" max="500" placeholder="000" required>cm.<br>
-      <button class="btn btn--s" id="calcular-usuario" disabled>Calculate</button>
+      <button class="button button--s" id="calcular-usuario" disabled>Calculate</button>
       <div class="resultado-peso" id="resultado-peso" style="font-weight: bold;"></div>
       <div class="resultado-altura" id="resultado-altura" style="font-weight: bold;"></div>
     </div>
@@ -54,9 +69,14 @@
     </footer>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
   <script src="src/main.js"></script>
   <script src="src/giphy.js"></script>
   <script src="src/spotify.js"></script>
+
 </body>
 
 </html>
