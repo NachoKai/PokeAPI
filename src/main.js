@@ -45,7 +45,6 @@ function showbuttons() {
     div.className = "buttons"
     comparaciones.className = "datos"
     listaPokemon.className = "pokemon-list"
-    document.getElementById("calcular-usuario").disabled = false;
     div.innerHTML = `
     <button class="button button--s" id="leftbutton" onclick="turnFn()">
     << </button> <button class="button button--s" id="shinybutton" onclick="shinybuttonFn()">Shiny ON/OFF
@@ -80,7 +79,7 @@ function crearPokemon(pokemon) {
         },
         options: {}
     });
-    
+
     img.src = pokemon.sprites.front_default
     img.className = 'poke-img'
     imgShiny.src = pokemon.sprites.front_shiny
