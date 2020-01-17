@@ -63,7 +63,6 @@ body {
 
 input {
   border-radius: .25em;
-  border-style: solid;
   border-width: 1px;
   color: #111;
   display: inline-block;
@@ -93,7 +92,6 @@ input {
 
 .datos {
   background: #181818;
-  border: solid 1px #fff;
   border-radius: 5px;
   padding: 5px;
   margin: 5px;
@@ -159,7 +157,6 @@ footer {
 }
 
 .pokemon {
-  border: solid 2px #fff;
   border-radius: 5px;
   background: #181818;
   padding: 5px;
@@ -197,7 +194,7 @@ footer {
           align-items: center;
   margin: auto;
   border-radius: .25em;
-  border-width: 1px;
+  border-style: none !important;
 }
 
 #poke-name {
@@ -264,7 +261,6 @@ footer {
 .btn:link,
 .btn:visited {
   border-radius: .25em;
-  border-style: solid;
   border-width: 1px;
   color: #111;
   display: inline-block;
@@ -305,5 +301,9 @@ footer {
 .btn--l {
   font-size: 20px;
   border-radius: .25em !important;
+}
+
+label:hover {
+  cursor: pointer;
 }
 /*# sourceMappingURL=main.css.map */
