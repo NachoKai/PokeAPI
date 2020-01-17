@@ -26,29 +26,29 @@ let listaPokemon = document.getElementById("lista-pokemon"),
     comparaciones = document.getElementById("datos"),
     calcular = document.getElementById("calcular-usuario"),
     prev = document.getElementById("prev"),
-    next = document.getElementById("next")
+    next = document.getElementById("next"),
+    id = 1
 
 function consultarPokemones() {
-    let pokeID = Math.round(Math.random() * 493);
-    consultarPokemon(pokeID);
+    let id = Math.round(Math.random() * 493)
+    consultarPokemon(id)
     deletebuttons()
     showbuttons()
 }
 
+next.addEventListener("click", () => {
+    id++
+    consultarPokemon(id)
+});
+
+prev.addEventListener("click", () => {
+    id--
+    consultarPokemon(id)
+});
+
 function consultarPokemon(id) {
     fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(response => response.json()).then((pokemon) => crearPokemon(pokemon))
-    
-    next.addEventListener("click", () => {
-        id++;
-        consultarPokemon(id)
-    });
-    
-    prev.addEventListener("click", () => {
-        id--;
-        consultarPokemon(id)
-    });
 }
-
 
 function showbuttons() {
     const buttons = document.querySelector("#button");
