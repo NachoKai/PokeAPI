@@ -36,17 +36,19 @@ function consultarPokemones() {
 }
 
 function consultarPokemon(id) {
-    next.addEventListener("click",()=>{
+    fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(response => response.json()).then((pokemon) => crearPokemon(pokemon))
+    
+    next.addEventListener("click", () => {
         id++;
         consultarPokemon(id)
     });
-    prev.addEventListener("click",()=>{
+    
+    prev.addEventListener("click", () => {
         id--;
         consultarPokemon(id)
     });
-    
-    fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(response => response.json()).then((pokemon) => crearPokemon(pokemon))
 }
+
 
 function showbuttons() {
     const buttons = document.querySelector("#button");
@@ -312,7 +314,6 @@ function calculaAltura() {
 }
 
 document.getElementById("current-year").innerHTML = new Date().getFullYear();
-
 
 /*
 Numeros por generacion:
