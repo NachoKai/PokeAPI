@@ -7,7 +7,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Lato', sans-serif;
-  transition: all 0.1s ease;
+  transition: all 0.2s ease;
   outline: 0 !important;
   -moz-user-select: none;
   -webkit-user-drag: none;
@@ -318,4 +318,9 @@ p {
 
 .panel {
   display: none;
+}
+
+.far:hover {
+  cursor: pointer;
+  color: rgb(17, 127, 223);
 }
