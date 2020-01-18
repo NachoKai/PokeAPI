@@ -1,180 +1,109 @@
 @import 'variables';
 
-.type-zero {
+@mixin types {
     border-radius: 10px;
     text-align: center;
     font-weight: bold;
     min-width: 65px;
     color: $card-text;
+    margin: 4px;
+}
+
+.type-zero {
+    @include types;
 }
 
 .type-water {
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    min-width: 65px;
+    @include types;
     background-color: $water;
-    color: $card-text;
 }
 
 .type-fire {
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    min-width: 65px;
+    @include types;
     background-color: $fire;
-    color: $card-text;
 }
 
 .type-normal {
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    min-width: 65px;
+    @include types;
     background-color: $normal;
-    color: $card-text;
 }
 
 .type-fighting {
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    min-width: 65px;
+    @include types;
     background-color: $fighting;
-    color: $card-text;
 }
 
 .type-flying {
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    min-width: 65px;
+    @include types;
     background-color: $flying;
-    color: $card-text;
 }
 
 .type-poison {
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    min-width: 65px;
+    @include types;
     background-color: $poison;
-    color: $card-text;
 }
 
 .type-ground {
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    min-width: 65px;
+    @include types;
     background-color: $ground;
-    color: $card-text;
 }
 
 .type-rock {
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    min-width: 65px;
+    @include types;
     background-color: $rock;
-    color: $card-text;
 }
 
 .type-bug {
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    min-width: 65px;
+    @include types;
     background-color: $bug;
-    color: $card-text;
 }
 
 .type-ghost {
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    min-width: 65px;
+    @include types;
     background-color: $ghost;
-    color: $card-text;
 }
 
 .type-steel {
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    min-width: 65px;
+    @include types;
     background-color: $steel;
-    color: $card-text;
 }
 
 .type-grass {
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    min-width: 65px;
+    @include types;
     background-color: $grass;
-    color: $card-text;
 }
 
 .type-electric {
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    min-width: 65px;
+    @include types;
     background-color: $electric;
-    color: $card-text;
 }
 
 .type-psychic {
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    min-width: 65px;
+    @include types;
     background-color: $psychic;
-    color: $card-text;
 }
 
 .type-ice {
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    min-width: 65px;
+    @include types;
     background-color: $ice;
-    color: $card-text;
 }
 
 .type-dragon {
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    min-width: 65px;
+    @include types;
     background-color: $dragon;
-    color: $card-text;
 }
 
 .type-dark {
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    min-width: 65px;
+    @include types;
     background-color: $dark;
-    color: $card-text;
 }
 
 .type-fairy {
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    min-width: 65px;
+    @include types;
     background-color: $fairy;
-    color: $card-text;
 }
 
 .type-unknown {
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    min-width: 65px;
+    @include types;
     background-color: $unknown;
-    color: $card-text;
 }

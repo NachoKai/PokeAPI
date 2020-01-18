@@ -310,12 +310,10 @@ p {
   color: #eee;
   cursor: pointer;
   border: none;
-  text-align: left;
+  text-align: center !important;
   outline: none;
-  transition: 0.4s;
 }
 
 .panel {
-  padding: 0 18px;
   display: none;
 }
