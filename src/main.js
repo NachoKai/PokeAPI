@@ -144,9 +144,8 @@ function crearPokemon(pokemon) {
         }
     }
 
-
-    pesoPokemon.innerHTML = `<b>${Math.round((pokemon.weight) / 10)} kg. </b>`
-    alturaPokemon.innerHTML = `  <b>${Math.round((pokemon.height) * 10)} cm.</b>`
+    pesoPokemon.innerHTML = `<b>${Math.round((pokemon.weight) / 10)} kg </b>`
+    alturaPokemon.innerHTML = `  <b>${Math.round((pokemon.height) * 10)} cm</b>`
     tipoA.textContent = `${pokemon.types[0].type.name.charAt(0).toUpperCase() + pokemon.types[0].type.name.slice(1)}`
 
     if(tipoA.textContent  === 'Water' ){
