@@ -56,6 +56,7 @@ function showbuttons() {
     div.className = "buttons"
     comparaciones.className = "datos"
     listaPokemon.className = "pokemon-list"
+    document.getElementById("calcular-usuario").disabled = false;
     div.innerHTML = `
     <button class="button button--s" id="leftbutton" onclick="turnFn()">
     << </button> <button class="button button--s" id="shinybutton" onclick="shinybuttonFn()">Shiny ON/OFF
