@@ -416,6 +416,8 @@ function calculaPeso() {
     let difPesoMas = Number(pesoUser.value) - pesoPkm
     let difPesoMenos = pesoPkm - Number(pesoUser.value)
 
+
+      
     if (Number(pesoUser.value === "" || 0)) {
         resultadoPeso.innerText = 'Enter your weight!'
     } else if (Number(pesoUser.value) === pesoPkm) {

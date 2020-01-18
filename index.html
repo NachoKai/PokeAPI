@@ -50,20 +50,24 @@
         <div id="hd"><canvas id="myChart" style="width:300px;height:300px;"></canvas></div>
       </div>
     </div>
-  
+
     <div class="gif-button">
       <button class="button button--m" id="poke-button" onclick="consultarPokemones()">Get Random!</button> 
       <button class="button button--m" id="poke-button-gif">Get GIF!</button>
     </div>
 
     <div class="hidden" id="datos">
+      <br>
       <label for="peso-usuario">Insert your weight:</label>
       <input type="number" name="peso" id="peso-usuario" min="0" max="500" placeholder="000" required>kg.<br>
       <label for="altura-usuario">Insert your height:</label>
       <input type="number" name="altura" id="altura-usuario" min="0" max="500" placeholder="000" required>cm.<br>
+      <br>
       <button class="button button--m" id="calcular-usuario" disabled>Calculate</button>
+      <br><br>
       <div class="resultado-peso" id="resultado-peso" style="font-weight: bold;"></div>
       <div class="resultado-altura" id="resultado-altura" style="font-weight: bold;"></div>
+      <br>
     </div>
     <div id="gifs" class="hidden"></div>
     <footer>
@@ -78,6 +82,7 @@
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
 </body>
 
