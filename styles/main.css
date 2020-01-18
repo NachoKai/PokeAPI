@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
 .type-zero {
+  text-align: center;
   border-radius: 10px;
   text-align: center;
   font-weight: bold;
@@ -9,6 +10,7 @@
 }
 
 .type-water {
+  text-align: center;
   border-radius: 10px;
   text-align: center;
   font-weight: bold;
@@ -19,6 +21,7 @@
 }
 
 .type-fire {
+  text-align: center;
   border-radius: 10px;
   text-align: center;
   font-weight: bold;
@@ -29,6 +32,7 @@
 }
 
 .type-normal {
+  text-align: center;
   border-radius: 10px;
   text-align: center;
   font-weight: bold;
@@ -39,6 +43,7 @@
 }
 
 .type-fighting {
+  text-align: center;
   border-radius: 10px;
   text-align: center;
   font-weight: bold;
@@ -49,6 +54,7 @@
 }
 
 .type-flying {
+  text-align: center;
   border-radius: 10px;
   text-align: center;
   font-weight: bold;
@@ -59,6 +65,7 @@
 }
 
 .type-poison {
+  text-align: center;
   border-radius: 10px;
   text-align: center;
   font-weight: bold;
@@ -69,6 +76,7 @@
 }
 
 .type-ground {
+  text-align: center;
   border-radius: 10px;
   text-align: center;
   font-weight: bold;
@@ -79,6 +87,7 @@
 }
 
 .type-rock {
+  text-align: center;
   border-radius: 10px;
   text-align: center;
   font-weight: bold;
@@ -89,6 +98,7 @@
 }
 
 .type-bug {
+  text-align: center;
   border-radius: 10px;
   text-align: center;
   font-weight: bold;
@@ -99,6 +109,7 @@
 }
 
 .type-ghost {
+  text-align: center;
   border-radius: 10px;
   text-align: center;
   font-weight: bold;
@@ -109,6 +120,7 @@
 }
 
 .type-steel {
+  text-align: center;
   border-radius: 10px;
   text-align: center;
   font-weight: bold;
@@ -119,6 +131,7 @@
 }
 
 .type-grass {
+  text-align: center;
   border-radius: 10px;
   text-align: center;
   font-weight: bold;
@@ -129,6 +142,7 @@
 }
 
 .type-electric {
+  text-align: center;
   border-radius: 10px;
   text-align: center;
   font-weight: bold;
@@ -139,6 +153,7 @@
 }
 
 .type-psychic {
+  text-align: center;
   border-radius: 10px;
   text-align: center;
   font-weight: bold;
@@ -149,6 +164,7 @@
 }
 
 .type-ice {
+  text-align: center;
   border-radius: 10px;
   text-align: center;
   font-weight: bold;
@@ -159,6 +175,7 @@
 }
 
 .type-dragon {
+  text-align: center;
   border-radius: 10px;
   text-align: center;
   font-weight: bold;
@@ -169,6 +186,7 @@
 }
 
 .type-dark {
+  text-align: center;
   border-radius: 10px;
   text-align: center;
   font-weight: bold;
@@ -179,6 +197,7 @@
 }
 
 .type-fairy {
+  text-align: center;
   border-radius: 10px;
   text-align: center;
   font-weight: bold;
@@ -189,6 +208,7 @@
 }
 
 .type-unknown {
+  text-align: center;
   border-radius: 10px;
   text-align: center;
   font-weight: bold;
