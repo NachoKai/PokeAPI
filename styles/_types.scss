@@ -1,82 +1,180 @@
 @import 'variables';
 
+.type-zero {
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    min-width: 65px;
+    color: $card-text;
+}
+
 .type-water {
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    min-width: 65px;
     background-color: $water;
     color: $card-text;
 }
+
 .type-fire {
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    min-width: 65px;
     background-color: $fire;
     color: $card-text;
 }
-.type-normal{
-    background-color:$normal;
+
+.type-normal {
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    min-width: 65px;
+    background-color: $normal;
     color: $card-text;
 }
-.type-fighting{
+
+.type-fighting {
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    min-width: 65px;
     background-color: $fighting;
     color: $card-text;
 }
-.type-flying{
+
+.type-flying {
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    min-width: 65px;
     background-color: $flying;
     color: $card-text;
 }
-.type-poison{
+
+.type-poison {
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    min-width: 65px;
     background-color: $poison;
     color: $card-text;
 }
-.type-ground{
+
+.type-ground {
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    min-width: 65px;
     background-color: $ground;
     color: $card-text;
 }
 
-.type-rock{
-    background-color: $rock; 
+.type-rock {
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    min-width: 65px;
+    background-color: $rock;
     color: $card-text;
 }
-.type-bug{
+
+.type-bug {
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    min-width: 65px;
     background-color: $bug;
     color: $card-text;
 }
-.type-ghost{
+
+.type-ghost {
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    min-width: 65px;
     background-color: $ghost;
     color: $card-text;
 }
-.type-steel{
+
+.type-steel {
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    min-width: 65px;
     background-color: $steel;
     color: $card-text;
 }
-.type-grass{
+
+.type-grass {
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    min-width: 65px;
     background-color: $grass;
     color: $card-text;
 }
-.type-electric{
+
+.type-electric {
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    min-width: 65px;
     background-color: $electric;
     color: $card-text;
 }
-.type-psychic{
+
+.type-psychic {
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    min-width: 65px;
     background-color: $psychic;
     color: $card-text;
 }
-.type-ice{
+
+.type-ice {
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    min-width: 65px;
     background-color: $ice;
     color: $card-text;
 }
-.type-dragon{
+
+.type-dragon {
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    min-width: 65px;
     background-color: $dragon;
     color: $card-text;
 }
-.type-dark{
+
+.type-dark {
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    min-width: 65px;
     background-color: $dark;
     color: $card-text;
 }
-.type-fairy{
+
+.type-fairy {
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    min-width: 65px;
     background-color: $fairy;
     color: $card-text;
 }
-.type-unknown{
+
+.type-unknown {
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    min-width: 65px;
     background-color: $unknown;
     color: $card-text;
-}/*
-.type-shadow{
-    background-color: $shadow;
-}*/
+}

@@ -62,7 +62,7 @@ function showbuttons() {
     << </button> <button class="button button--s" id="shinybutton" onclick="shinybuttonFn()">Shiny ON/OFF
     </button>
     <button class="button button--s" id="sexbutton" onclick="sexFn()"> ♂/♀ </button>
-    <button class="button button--s" id="rightbutton" onclick="turnFn()"> >> </button>
+    <button class="button button--s" id="rightbutton" onclick="turnFn()"> >> </button><br><br>
     `
     buttons.appendChild(div);
 }
@@ -115,11 +115,11 @@ function crearPokemon(pokemon) {
     let desc = document.getElementById('desc');
     let abilities = pokemon.abilities;
     let moves = pokemon.moves;
-    desc.innerHTML = "</p><p id='abty'><b>Abilities: </b></p>";
+    desc.innerHTML = "<br><p id='abty'></p><br>";
     for (let i = 0; i < abilities.length; i++) {
         abty.innerHTML += "<span class='badge badge-danger'>" + abilities[i].ability.name + "</span>&nbsp;";
     }
-    abty.innerHTML += `<br></i><button id='accBtn' class="accordion"><i class="far fa-caret-square-down"> <b>Moves: </b><div class="panel" id='mvs'></div></button>`;
+    abty.innerHTML += `<br><br></i><button id='accBtn' class="accordion"><i class="far fa-caret-square-down"> <b>Moves </b><div class="panel" id='mvs'></div></button>`;
     for (let i = 0; i < moves.length; i++) {
         if (i % 2 == 0)
             mvs.innerHTML += "<p class='badge badge-light'>" + moves[i].move.name + "</p>&nbsp;";
@@ -145,13 +145,133 @@ function crearPokemon(pokemon) {
     }
 
 
-    pesoPokemon.innerHTML = `<b>Weight</b>: ${Math.round((pokemon.weight) / 10)} kg.`
-    alturaPokemon.innerHTML = `<b>  Height</b>: ${Math.round((pokemon.height) * 10)} cm.`
-    tipoA.innerHTML = `<b>Type A</b>: ${pokemon.types[0].type.name.charAt(0).toUpperCase() + pokemon.types[0].type.name.slice(1)}`
+    pesoPokemon.innerHTML = `<br><b>${Math.round((pokemon.weight) / 10)} kg. </b>`
+    alturaPokemon.innerHTML = `<br>  <b>${Math.round((pokemon.height) * 10)} cm.</b>`
+    tipoA.textContent = `${pokemon.types[0].type.name.charAt(0).toUpperCase() + pokemon.types[0].type.name.slice(1)}`
+
+    if(tipoA.textContent  === 'Water' ){
+        tipoA.className = 'type-water'
+    }else if(tipoA.textContent  === 'Fire' ){
+        tipoA.className = 'type-fire'
+    }
+    else if(tipoA.textContent  === 'Normal' ){
+        tipoA.className = 'type-normal'
+    }
+    else if(tipoA.textContent  === 'Fighting' ){
+        tipoA.className = 'type-fighting'
+    }
+    else if(tipoA.textContent  === 'Flying' ){
+        tipoA.className = 'type-flying'
+    }
+    else if(tipoA.textContent  === 'Poison' ){
+        tipoA.className = 'type-poison'
+    }
+    else if(tipoA.textContent  === 'Ground' ){
+        tipoA.className = 'type-ground'
+    }
+    else if(tipoA.textContent  === 'Rock' ){
+        tipoA.className = 'type-rock'
+    }
+    else if(tipoA.textContent  === 'Bug' ){
+        tipoA.className = 'type-bug'
+    }
+    else if(tipoA.textContent  === 'Ghost' ){
+        tipoA.className = 'type-ghost'
+    }
+    else if(tipoA.textContent  === 'Steel' ){
+        tipoA.className = 'type-steel'
+    }
+    else if(tipoA.textContent  === 'Grass' ){
+        tipoA.className = 'type-grass'
+    }
+    else if(tipoA.textContent  === 'Electric' ){
+        tipoA.className = 'type-electric'
+    }
+    else if(tipoA.textContent  === 'Psychic' ){
+        tipoA.className = 'type-psychic'
+    }
+    else if(tipoA.textContent  === 'Ice' ){
+        tipoA.className = 'type-ice'
+    }
+    else if(tipoA.textContent  === 'Dragon' ){
+        tipoA.className = 'type-dragon'
+    }
+    else if(tipoA.textContent  === 'Dark' ){
+        tipoA.className = 'type-dark'
+    }
+    else if(tipoA.textContent  === 'Fairy' ){
+        tipoA.className = 'type-fairy'
+    }
+    else if(tipoA.textContent  === 'Shadow' ){
+        tipoA.className = 'type-shadow'
+    }
+     else{
+        tipoA.className = 'type-zero'
+    }
+
     if (pokemon.types[1] === undefined) {
         return tipoB.innerHTML = ''
     } else {
-        tipoB.innerHTML = `  <b>Type B</b>: ${pokemon.types[1].type.name.charAt(0).toUpperCase() + pokemon.types[1].type.name.slice(1)}`
+        tipoB.innerHTML = `${pokemon.types[1].type.name.charAt(0).toUpperCase() + pokemon.types[1].type.name.slice(1)}`
+        if(tipoB.textContent  === 'Water' ){
+            tipoB.className = 'type-water'
+        }else if(tipoB.textContent  === 'Fire' ){
+            tipoB.className = 'type-fire'
+        }
+        else if(tipoB.textContent  === 'Normal' ){
+            tipoB.className = 'type-normal'
+        }
+        else if(tipoB.textContent  === 'Fighting' ){
+            tipoB.className = 'type-fighting'
+        }
+        else if(tipoB.textContent  === 'Flying' ){
+            tipoB.className = 'type-flying'
+        }
+        else if(tipoB.textContent  === 'Poison' ){
+            tipoB.className = 'type-poison'
+        }
+        else if(tipoB.textContent  === 'Ground' ){
+            tipoB.className = 'type-ground'
+        }
+        else if(tipoB.textContent  === 'Rock' ){
+            tipoB.className = 'type-rock'
+        }
+        else if(tipoB.textContent  === 'Bug' ){
+            tipoB.className = 'type-bug'
+        }
+        else if(tipoB.textContent  === 'Ghost' ){
+            tipoB.className = 'type-ghost'
+        }
+        else if(tipoB.textContent  === 'Steel' ){
+            tipoB.className = 'type-steel'
+        }
+        else if(tipoB.textContent  === 'Grass' ){
+            tipoB.className = 'type-grass'
+        }
+        else if(tipoB.textContent  === 'Electric' ){
+            tipoB.className = 'type-electric'
+        }
+        else if(tipoB.textContent  === 'Psychic' ){
+            tipoB.className = 'type-psychic'
+        }
+        else if(tipoB.textContent  === 'Ice' ){
+            tipoB.className = 'type-ice'
+        }
+        else if(tipoB.textContent  === 'Dragon' ){
+            tipoB.className = 'type-dragon'
+        }
+        else if(tipoB.textContent  === 'Dark' ){
+            tipoB.className = 'type-dark'
+        }
+        else if(tipoB.textContent  === 'Fairy' ){
+            tipoB.className = 'type-fairy'
+        }
+        else if(tipoB.textContent  === 'Shadow' ){
+            tipoB.className = 'type-shadow'
+        }
+         else{
+            tipoB.className = 'type-zero'
+        }
     }
 }
 
