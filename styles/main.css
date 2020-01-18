@@ -198,12 +198,15 @@ html {
 }
 
 body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   background-color: #000000 !important;
   color: #fff !important;
   max-width: 100vw !important;
   text-align: center !important;
-  display: -webkit-box !important;
-  display: -ms-flexbox !important;
   display: flex !important;
   -webkit-box-orient: vertical !important;
   -webkit-box-direction: normal !important;
@@ -334,7 +337,7 @@ footer {
 }
 
 .pokemon {
-  max-width: 400px;
+  max-width: 450px;
   border-radius: 5px;
   background: #181818;
   padding: 5px;
