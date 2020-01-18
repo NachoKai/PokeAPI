@@ -1,5 +1,7 @@
-# API Practice
-
+# PokeAPI
+• HTML
+• CSS (Scss)
+• Javascript
 • PokeAPI (https://pokeapi.co)  
 • GiphyAPI (https://developers.giphy.com)  
   
