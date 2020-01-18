@@ -627,4 +627,9 @@ p {
   cursor: pointer;
   color: #117fdf;
 }
+
+.far {
+  margin-right: 25px;
+  margin-left: 25px;
+}
 /*# sourceMappingURL=main.css.map */
