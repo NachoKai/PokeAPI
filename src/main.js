@@ -119,17 +119,31 @@ function crearPokemon(pokemon) {
     for (let i = 0; i < abilities.length; i++) {
         abty.innerHTML += "<span class='badge badge-danger'>" + abilities[i].ability.name + "</span>&nbsp;";
     }
-    abty.innerHTML += "<p><b>Moves: </b><p id='mvs'></p></p>";
+    abty.innerHTML += `<br></i><button id='accBtn' class="accordion"><i class="far fa-caret-square-down"> <b>Moves: </b><div class="panel" id='mvs'></div></button>`;
     for (let i = 0; i < moves.length; i++) {
         if (i % 2 == 0)
-            mvs.innerHTML += "<span class='badge badge-light'>" + moves[i].move.name + "</span>&nbsp;";
+            mvs.innerHTML += "<p class='badge badge-light'>" + moves[i].move.name + "</p>&nbsp;";
         else if (i % 3 == 0)
-            mvs.innerHTML += "<span class='badge badge-info'>" + moves[i].move.name + "</span>&nbsp;";
+            mvs.innerHTML += "<p class='badge badge-info'>" + moves[i].move.name + "</p>&nbsp;";
         else if (i % 5 == 0)
-            mvs.innerHTML += "<span class='badge badge-danger'>" + moves[i].move.name + "</span>&nbsp;";
+            mvs.innerHTML += "<p class='badge badge-danger'>" + moves[i].move.name + "</p>&nbsp;";
         else
-            mvs.innerHTML += "<span class='badge badge-success'>" + moves[i].move.name + "</span>&nbsp;";
+            mvs.innerHTML += "<p class='badge badge-success'>" + moves[i].move.name + "</p>&nbsp;";
     }
+
+    let acc = document.querySelector("#accBtn");
+    let panel = document.querySelectorAll(".panel")
+    acc.onclick = () => {
+
+        if (panel[0].style.display === 'block') {
+            panel[0].style.display = 'none'
+        } else {
+            panel[0].style.display = 'block'
+            panel[0].style.flexDirection = 'column'
+            panel[0].style.flexWrap = 'wrap'
+        }
+    }
+
 
     pesoPokemon.innerHTML = `<b>Weight</b>: ${Math.round((pokemon.weight) / 10)} kg.`
     alturaPokemon.innerHTML = `<b>  Height</b>: ${Math.round((pokemon.height) * 10)} cm.`
